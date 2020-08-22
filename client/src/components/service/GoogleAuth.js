@@ -8,6 +8,9 @@ import { signIn, signOut } from "../../actions";
 // https://developers.google.com/identity/sign-in/web/reference
 // https://developers.google.com/identity/sign-in/web/reference#authentication
 //
+// To talk to a server best to present the JWT Token you get using:
+// gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token
+//
 class GoogleAuth extends React.Component {
 
   componentDidMount() {
@@ -24,7 +27,16 @@ class GoogleAuth extends React.Component {
   }
 
   onAuthChange = (isSignedIn) => {
-    isSignedIn ? this.props.signIn() : this.props.signOut();
+    if (isSignedIn) {
+      const user = this.auth.currentUser.get();
+      const userId = user.getId();
+      const jwt = user.getAuthResponse().id_token;
+      const email = user.getBasicProfile().getEmail();
+      const name = user.getBasicProfile().getName();
+      this.props.signIn(userId, name, email, jwt);
+    } else {
+      this.props.signOut();
+    }
   };
 
   signInOnClick = () => {
@@ -69,6 +81,7 @@ class GoogleAuth extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return ({
     signedIn: state.auth.signedIn
   });
