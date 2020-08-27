@@ -10,6 +10,7 @@ import { signIn, signOut } from "../../actions";
 //
 // To talk to a server best to present the JWT Token you get using:
 // gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token
+// You can cut and paste the token to site like https://jwt.io/ to see claims
 //
 class GoogleAuth extends React.Component {
 
@@ -81,7 +82,6 @@ class GoogleAuth extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return ({
     signedIn: state.auth.signedIn
   });
