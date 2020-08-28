@@ -1,0 +1,32 @@
+{
+  "streams": [
+    {
+      "title": "My Stream",
+      "description": "Testing Steram Create",
+      "userId": "12345",
+      "id": 1
+    },
+    {
+      "title": "another stream",
+      "description": "Testing .again",
+      "userId": "12345",
+      "id": 3
+    },
+    {
+      "title": "stream with ID",
+      "description": "This is a stream with userId set!",
+      "id": 4
+    },
+    {
+      "title": "new stream",
+      "description": "This should be changed now!!!!!!!!!",
+      "id": 6
+    },
+    {
+      "title": "OBS Test",
+      "description": "Testing OBS Streaming",
+      "userId": "118207249109900902534",
+      "id": 7
+    }
+  ]
+}

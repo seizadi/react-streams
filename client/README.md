@@ -3,7 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## References
 * [Redux Forms](https://redux-form.com)
 * [JSON Server](https://npmjs.com/package/json-server)
-
+* [Node Meida Server](https://github.com/illuspas/Node-Media-Server)
+* [flv Player](https://github.com/illuspas/Node-Media-Server#via-flvjs-over-http-flv)
+* [flv package](https://npmjs.com/package/flv.js)
 ## Available Scripts
 
 In the project directory, you can run:
